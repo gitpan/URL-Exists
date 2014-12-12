@@ -1,5 +1,5 @@
 package URL::Exists;
-$URL::Exists::VERSION = '0.01';
+$URL::Exists::VERSION = '0.02';
 use 5.006;
 use strict;
 use warnings;
@@ -14,7 +14,10 @@ sub url_exists
 {
     my $url = shift;
 
-    $ua //= HTTP::Tiny->new();
+    unless (defined $ua) {
+        $ua = HTTP::Tiny->new();
+    }
+
     my $response = $ua->head($url);
 
     return !!$response->{success};

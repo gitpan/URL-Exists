@@ -23,4 +23,4 @@ requires:
 resources:
   homepage: https://github.com/neilbowers/URL-Exists
   repository: https://github.com/neilbowers/URL-Exists.git
-version: '0.01'
+version: '0.02'
